@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Hello World!
+title: Fedeoo博客
 tagline: Supporting tagline
 ---
 {% include JB/setup %}
