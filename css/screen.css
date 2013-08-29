@@ -6,10 +6,10 @@
 
 /* Global Reset */
 
-* {
+/** {
   margin: 0;
   padding: 0;
-}
+}*/
 
 html, body {
   height: 100%;
@@ -163,7 +163,11 @@ ul.posts {
 
   #post ul,
   #post ol {
-    margin-left: 1.35em;
+    /*margin-left: 1.35em;*/
+  }
+  #post ul{
+    margin-left: 0px;
+    list-style-type: none;
   }
 
   #post code {
@@ -196,3 +200,12 @@ ul.posts {
   #related h2 {
     margin-bottom: 1em;
   }
+
+
+#post code {
+   font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+
+pre code {
+   font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
