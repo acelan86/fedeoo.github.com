@@ -2,8 +2,8 @@
 layout: post
 title: "build up blog with jekyll"
 description: ""
-category: 
-tags: []
+category: bulid-up
+tags: [gitblog jekyll]
 ---
 {% include JB/setup %}
 因为需要在github下记录一些东西，git上使用的git wiki，不是很顺手。网上有推荐wordpress或用github自己搭建blog的。
