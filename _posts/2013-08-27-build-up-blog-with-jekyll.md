@@ -22,9 +22,11 @@ gem install jekyll 就是不成功，找不到库。
 	gem install --local **.gem
 
 不过这次想死的是jekyll还需要依赖其它的一些库，十几个啊！让人绝望的是网上一精神可嘉的哥们手动下载安装之后，居然还没成功。还好，在网上找到了替代的资源。
+
 	gem sources --remove http://rubygems.org/ 
 	gem sources -a http://ruby.taobao.org/ 
 	gem install jekyll
+
 安装jekyll之后。下载bootstrap,算是一个初始的项目了。
 下面的介绍已经很详细了，不再多说。
 
@@ -38,4 +40,5 @@ gem install jekyll 就是不成功，找不到库。
 运行jekyll –server时出现的编码问题：invalid byte sequence in GBK ...."
 
 找到ruby目录下gems/jekyll-0.11.0/lib/jekyll/convertible.rb 31行修改为下面的内容
-`self.content = File.read(File.join(base, name), :encoding => "utf-8")`
+
+	self.content = File.read(File.join(base, name), :encoding => "utf-8")

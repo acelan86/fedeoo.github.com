@@ -171,12 +171,6 @@ ul.posts {
     padding-left: 30px;
     /*list-style-type: none;*/
   }
-    border: 1px solid #ddd;
-    background-color: #eef;
-    font-size: 85%;
-    padding: 0 .2em;
-  }
-
     #post pre code {
       border: none;
     }
@@ -203,9 +197,9 @@ ul.posts {
 
 
 #post code {
-   font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+   font-family: Menlo,Monaco,Consolas,"Courier New",monospace,'Microsoft YaHei';
 }
 
 pre code {
-   font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+   font-family: Menlo,Monaco,Consolas,"Courier New",monospace,'Microsoft YaHei';
 }
