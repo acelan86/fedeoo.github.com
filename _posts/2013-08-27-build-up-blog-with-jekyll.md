@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "build up blog with jekyll"
+title: "使用jekyll构建博客"
 description: ""
 category: bulid-up
 tags: [gitblog jekyll]

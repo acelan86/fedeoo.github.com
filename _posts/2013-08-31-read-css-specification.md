@@ -3,7 +3,7 @@ layout: post
 title: "阅读CSS规范文档"
 description: ""
 category: 
-tags: []
+tags: [阅读文档记录]
 ---
 {% include JB/setup %}
 
@@ -113,8 +113,13 @@ em常规流em向中两个或多个块框相邻的垂直边距会重合。结果�
 常规流向中的块类、非替换元素：  
 如果'left'或'right'设置为'auto'，它们的计算值为0。在其它属性间必须保持下面的约束：  
 'margin-left' + 'border-left-width' + 'padding-left' + 'width' + 'padding-right' + 'border-right-width' + 'margin-right' = 包含块的宽度  
-（如果边框的样式为'none'，边框宽度认为是'0'。）如果上述所有的属性指定了非'auto'的值，这些值被称为是“过度约束”，其中之一的计算值将不得不和它的指定值不同。如果'direction'属性为'ltr'，'margin-right'的指定值被忽略，并重新计算以满足上面的等式。如果'direction'为'rtl'，对'margin-left'采取上述的方法。
-如果只有一个值指定为'auto'，它的计算值从等式中得出。如果'width'设置为'auto'，则其它的'auto'值成为'0'而'width'从等式的剩余部分得到。如果'margin-left'和'margin-right'为'auto'，它们的计算值相同。
+（如果边框的样式为'none'，边框宽度认为是'0'。）
+
++ 如果上述所有的属性指定了非'auto'的值，这些值被称为是“过度约束”，其中之一的计算值将不得不和它的指定值不同。如果'direction'属性为'ltr'，'margin-right'的指定值被忽略，并重新计算以满足上面的等式。
++ 如果'direction'为'rtl'，对'margin-left'采取上述的方法。
++ 如果只有一个值指定为'auto'，它的计算值从等式中得出。
++ 如果'width'设置为'auto'，则其它的'auto'值成为'0'而'width'从等式的剩余部分得到。
++ 如果'margin-left'和'margin-right'为'auto'，它们的计算值相同。
 替换元素的width如果指定为'auto',值为内在宽度。
 
 浮动元素：  
@@ -123,20 +128,22 @@ em常规流em向中两个或多个块框相邻的垂直边距会重合。结果�
 绝对定位元素  
 约束：'left' + 'margin-left' + 'border-left-width' + 'padding-left' + 'width' + 'padding-right' + 'border-right-width' + 'margin-right' + 'right' = 包含块的宽度  
  （如果边框样式为'none'，边框宽度认为是'0'。这一约束的实现通过如下顺序的一系列替换而达到：
-如果'left'设置为'auto'而'direction'为'ltr'，替换'auto'为：包含块左边到假定它的'position'属性设置为'static'，而生成元素的第一个框的那个假想框的左边距边的距离。（但是为了不去实际计算那个框，用户端可以自由地猜想它可能在的位置。）如果假想框在包含块的左边，该值为负数。  
-如果'right'设置为'auto'而'direction'为'rtl'，替换'auto'为：包含块右边到上述提到的那个假想框的右边距边的距离。如果假想框在包含块边的左边，该值为正数。  
-如果'width'为'auto'，将剩余'left'或'right'的'auto'替换为'0'。  
-如果'left'，'right'或'width'还是'auto'，将所有'margin-left'或'margin-right'的'auto'替换为'0'。  
-如果在这一步'margin-left'和'margin-right'还是'auto'，基于额外的约束即两个边距必须相同，解出等式。  
-如果在这一步只有一个'auto'存在，根据等式解出那个值。  
-如果在这一步各值间过度约束，要么忽略'left'的值（如果'direction'为'rtl'），要么忽略'right'的值（如果'direction'为'ltr'），然后解出那个值。
+
++ 如果'left'设置为'auto'而'direction'为'ltr'，替换'auto'为：包含块左边到假定它的'position'属性设置为'static'，而生成元素的第一个框的那个假想框的左边距边的距离。（但是为了不去实际计算那个框，用户端可以自由地猜想它可能在的位置。）如果假想框在包含块的左边，该值为负数。
++ 如果'right'设置为'auto'而'direction'为'rtl'，替换'auto'为：包含块右边到上述提到的那个假想框的右边距边的距离。如果假想框在包含块边的左边，该值为正数。
++ 如果'width'为'auto'，将剩余'left'或'right'的'auto'替换为'0'。
++ 如果'left'，'right'或'width'还是'auto'，将所有'margin-left'或'margin-right'的'auto'替换为'0'。
++ 如果在这一步'margin-left'和'margin-right'还是'auto'，基于额外的约束即两个边距必须相同，解出等式。
++ 如果在这一步只有一个'auto'存在，根据等式解出那个值。
++ 如果在这一步各值间过度约束，要么忽略'left'的值（如果'direction'为'rtl'），要么忽略'right'的值（如果'direction'为'ltr'），然后解出那个值。
 
 min-width以及max-width这两个属性如何影响'width'属性的计算值：  
 
-先根据上述“宽度和边距的计算”中的规则计算宽度（不考虑'min-width'及'max-width'）。  
-如果计算得到的'min-width'大于'max-width'，'max-width'设置为'min-width'的值。0  
-如果计算值大于'max-width'，上述规则再次使用，但是这次用'max-width'作为'width'的指定值。  
-如果计算值小于'min-width'，上述规则再次使用，但是这次用'min-width'作为'width'的指定值。    
+先根据上述“宽度和边距的计算”中的规则计算宽度（不考虑'min-width'及'max-width'）。 
+
++ 如果计算得到的'min-width'大于'max-width'，'max-width'设置为'min-width'的值。0  
++ 如果计算值大于'max-width'，上述规则再次使用，但是这次用'max-width'作为'width'的指定值。  
++ 如果计算值小于'min-width'，上述规则再次使用，但是这次用'min-width'作为'width'的指定值。    
 
 
 #### 10.5 高度
@@ -149,27 +156,28 @@ height属性： 指定了块类元素和替换元素生成的框的内容高度�
  对于绝对定位的元素，垂直方向的尺寸必须满足如下约束：
 'top' + 'margin-top' + 'border-top-width' + 'padding-top' + 'height' + 'padding-bottom' + 'border-bottom-width' + 'margin-bottom' + 'bottom' = 包含块的高度
 （如果边框样式为'none'，认为宽度是'0'。）该约束的实现基于下列顺序的一系列替换：  
-如果'top'为'auto'，将它替换为：包含块的顶边到假定它的'position'属性设置为'static'，而生成元素的第一个框的那个假想框的顶边距边的距离。（但是为了不去实际计算那个框，用户端可以自由地猜想它可能在的位置。）如果假想框在包含块上面，该值为负数。
-如果'height'和'bottom'为'auto'，将'bottom'替换为0。
-如果'bottom'或'height'还是'auto'，将'margin-top'或'margin-bottom'中的'auto'替换为'0'。
-如果在这一步，'margin-top'和'margin-bottom'还是'auto'，根据附加的约束，即这两个边距必须相等来解出等式。
-如果在这一步，只有一个'auto'，根据等式解出该值。
-如果在这一步各值间过度约束，忽略'bottom'的值，然后解出那个值。
+
++ 如果'top'为'auto'，将它替换为：包含块的顶边到假定它的'position'属性设置为'static'，而生成元素的第一个框的那个假想框的顶边距边的距离。（但是为了不去实际计算那个框，用户端可以自由地猜想它可能在的位置。）如果假想框在包含块上面，该值为负数。
++ 如果'height'和'bottom'为'auto'，将'bottom'替换为0。
++ 如果'bottom'或'height'还是'auto'，将'margin-top'或'margin-bottom'中的'auto'替换为'0'。
++ 如果在这一步，'margin-top'和'margin-bottom'还是'auto'，根据附加的约束，即这两个边距必须相等来解出等式。
++ 如果在这一步，只有一个'auto'，根据等式解出该值。
++ 如果在这一步各值间过度约束，忽略'bottom'的值，然后解出那个值。
 
 从上面规则周看，高度计算可以 margin：auto?垂直居中。height自适应？首先height的高度还是根据子元素计算出来，而不是按照约束。翻译中漏掉了按照10.6.7计算高度。margin垂直居中肯定可以，bottom不能为auto，bottom指定值与top相同的值就可以。
 
 同理：min-height及max-height这两个属性如何影响'height'属性的计算值：  
 
 高度的计算基于上述“高度和边距的计算”的规则（不考虑'min-height'及'max-height'）。
-如果'min-height'的计算值大于'max-height'，'max-height'设置为'min-height'的值。
-如果计算的高度大于'max-height'，则上述规则再次使用，但是这次用'max-height'作为'height'的指定值。
-如果计算高度小于'min-height'，则上述规则再次使用，但是这次用'min-height'所谓'height'的指定值。
 
++ 如果'min-height'的计算值大于'max-height'，'max-height'设置为'min-height'的值。
++ 如果计算的高度大于'max-height'，则上述规则再次使用，但是这次用'max-height'作为'height'的指定值。
++ 如果计算高度小于'min-height'，则上述规则再次使用，但是这次用'min-height'所谓'height'的指定值。
 
-之前经常遇到 ul li 在IE7以及以下的各种麻烦事。没有记录。
-
+### 表格
 表格中实现带有行间水平分割线的表格是方案一，测试不得效果。且在IE下tr没有边框。或被td覆盖。
 
+之前经常遇到 ul li 在IE7以及以下的各种麻烦事。没有记录。   
 正则表达式问题：
-<***#{a}**#{b}*>需要将'#{a}'替换为'+a+'....正则表达式如何写：
-(<[^>]*?)#(\{([^\}]*)\}.*)* $1$2
+<***#{a}**#{b}*>需要将'#{a}'替换为'+a+'....编写程序，可以先匹配&lt;&gt;再replace#{a};如果在编辑器中使用一条正则表达式如何写：
+	(<[^>]*?)#(\{([^\}]*)\}.*)* $1$2  
