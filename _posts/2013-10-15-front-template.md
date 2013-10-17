@@ -21,13 +21,13 @@ tags: []
 
     <table>
         <tr><th>name</th><th>score</th></tr>
-        {{ for student in Things }}
-        <tr><td>{% student.name %}</td><td>{% student.score %}</td></tr>
+        {{ "{{ for student in Things" }} }}
+        <tr><td>{{ "{% student.name" }} %}</td><td>{{ "{% student.score" }} %}</td></tr>
     </table>
 
 之前算是学过jsp吧，对这样的标记并不陌生，<%= %> <% %>之间插入java代码，只不过jsp是编译成servlet的。好了，一个模板要达到的效果至少不能再让我用+连接字符串了。(adbox-Engine就有一个format方法做这种事，用于将html模板中的#{}替换为变量值。写代码不用想着模板不模板的，模式不模式的。)之后模板最好支持分支逻辑和循环遍历，上面的student.score可能需要根据值以不同颜色显示。另外，经常是数据的展现形式与数据不完全相同，比如日期date，输出的要求可能是('YYYY-MM-DD')，还有经常出现的bool值，可能存的是true false 或者 0 1 或者 yes no显示的时候又要显示为中文 是 否等。如果支持一个适配函数的形式就比较方便。
 
-标记选取：{{ }} <%= %>个人觉得只是约定形式。反倒习惯<%= %> <% %>这种。上面文章也提到避免与后端标记冲突，模板标记转义。  
+标记选取：{{"{{"}} }} {{ "<%=" }}" %>个人觉得只是约定形式。反倒习惯<%= %> <% %>这种。上面文章也提到避免与后端标记冲突，模板标记转义。  
 模板位置：现在比较常见的是放在&lt;script&gt;标签中。web components组件规范中直接定义了一个template元素，不过并未广泛支持。
     
     <script type="text/tmpl" id="myTmpl">
@@ -84,7 +84,7 @@ jQuery 作者 john 开发的微型模板引 <http://ejohn.org/blog/javascript-mi
 以下面的模板为例：
 
     <h3>
-        <% if (typeof content === 'string') {%>
+        <% if (typeof content === 'string') { %>
         <%= content %>
         <% } %>
     </h3>
