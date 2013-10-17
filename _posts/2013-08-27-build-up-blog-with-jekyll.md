@@ -8,14 +8,14 @@ tags: [gitblog jekyll]
 {% include JB/setup %}
 因为需要在github下记录一些东西，git上使用的git wiki，不是很顺手。网上有推荐wordpress或用github自己搭建blog的。
 
-以下记录了今天折腾的过程。在window下搭建。
-由于刚解除github，git的操作还不够顺溜，又多费了把劲。(由于对git不熟，在使用该命令时，按照网上的git clone git@github.com:fedeoo/***.git 老是出错。)
+以下记录了今天折腾的过程。在windows下搭建。
+由于刚接触github，git的操作还不够顺溜，又多费了把劲。(由于对git不熟，在使用该命令时，按照网上的git clone git@github.com:fedeoo/***.git 老是出错。)
 
 <http://www.cnblogs.com/purediy/archive/2013/03/07/2948892.html>介绍了怎么开始。
 
 安装ruby就不说了。在window下安装ruby的包真是坑。
 gem install jekyll 就是不成功，找不到库。
-之前安装sass时,也是这问题,就从github上下载之后,本地安装搞定。
+之前安装sass时,也遇到过这问题,就从github上下载之后,本地安装搞定。
 
 	git clone https://github.com/*****/**.git localpath
 	gem build **.gemspec 生成**.gem文件 

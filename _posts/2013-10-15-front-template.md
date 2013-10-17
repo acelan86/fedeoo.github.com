@@ -34,15 +34,15 @@ tags: []
         模板放这里......
     </script>
 
-关于性能：文章指出了性能是个伪命题，也给了理由。但还是了解下artTemplate性能高效原因：<http://cdc.tencent.com/?p=5723>(原文有链接)
+关于性能：文章指出了性能是个伪命题，也给了理由。但还是需要了解下artTemplate性能高效原因：<http://cdc.tencent.com/?p=5723>(原文有链接)
 
-+ 预编译  各个模板简单说还是生产了一个js函数，预编译当然就是，，。
++ 预编译  各个模板简单说最终还是生成了一个js函数，预编译当然就是，，。
 + 更快的字符串相加方式  很多人误以为数组 push 方法拼接字符串会比 += 快，要知道这仅仅是 IE6-8 的浏览器下。实测表明现代浏览器使用 += 会比数组 push 方法快，而在 v8 引擎中，使用 += 方式比数组拼接快 4.7 倍。
 
 关于异常处理：就是模板函数执行错误时，artTemplate能指定到行号。文中还给出了一个简单的demo方案。就是在生成的代码中每行插入$liine = currentLine这样的东西，感觉很老土，不知道artTemplate是不是采用的这种方式。
 
 
-jQuery 作者 john 开发的微型模板引 <http://ejohn.org/blog/javascript-micro-templating/>
+jQuery 作者 john 开发的微型模板引擎 <http://ejohn.org/blog/javascript-micro-templating/>
 
     // Simple JavaScript Templating
     // John Resig - http://ejohn.org/ - MIT Licensed
@@ -103,7 +103,7 @@ jQuery 作者 john 开发的微型模板引 <http://ejohn.org/blog/javascript-mi
         return p.join('');
     }
 
-刚给出的模板引擎正则表达式那段不大好看，就是将<% %>里面的内容直接作为字符串，其它的正文则是压入结果数组。我自己稍微改了下：
+刚给出的模板引擎正则表达式那段不大好看，作用就是将<% %>里面的内容直接作为字符串，其它的正文则是压入结果数组。我自己稍微改了下：
 
     var cache = {};
     this.tmpl = function (str, data) {
