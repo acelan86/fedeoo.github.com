@@ -1,0 +1,107 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>碎片</title>
+    <meta name="author" content="zhangfei" />
+    <link href="http://feeds.feedburner.com/" rel="alternate" title="your title" type="application/atom+xml" />
+    <link rel="stylesheet" href="/assets/themes/tom/css/syntax.css" type="text/css" />
+    <!-- Homepage CSS -->
+    <link rel="stylesheet" href="/assets/themes/tom/css/screen.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/monokai.min.css">
+    <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <title>繁星夜空</title>
+    <style type="text/css">
+    #sky,#stars,#twinkling,#clouds,#night{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    #stars{
+        background: #000 url(/images/stars.png) repeat top center;
+        z-index: 0;
+    }
+    @keyframes move-twink-back {
+        from {background-position:0 0;}
+        to {background-position:-10000px 5000px;}
+    }
+    -moz-keyframes move-twink-back {
+        from {background-position:0 0;}
+        to {background-position:-10000px 5000px;}
+    }
+    @-webkit-keyframes move-twink-back {
+        0% {background-position:0 0;}
+        100% {background-position:-10000px 5000px;}
+    }
+    #twinkling{
+        background: transparent url(/images/twinkling.png) repeat top center;
+        animation: move-twink-back 200s linear infinite;
+        -webkit-animation: move-twink-back 200s linear infinite;
+        -moz-animation: move-twink-back 200s linear infinite;
+        z-index: 1;
+    }
+    @keyframes move-clouds-back {
+        0% {background-position: 0;}
+        100% {background-position: 1000px 0px;}
+    }
+    @-webkit-keyframes move-clouds-back{
+        0% {background-position: 0;}
+        100% {background-position: 1000px 0px;}
+    }
+    #clouds{
+        background: transparent url(/images/clouds.png) repeat top center;
+        animation: move-clouds-back 200s linear infinite;
+        -webkit-animation: move-clouds-back 200s linear infinite;
+        -moz-animation: move-clouds-back 200s linear infinite;
+        z-index: 2;
+    }
+    .site{
+        position: relative;
+        z-index: 5;
+        margin-top: 0px;
+        padding-top: 3em;
+    }
+    #post{
+        color: white;
+    }
+    a:hover{
+        color: white;
+    }
+    </style>
+</head>
+<body>
+    <div id="sky">
+        <div id="stars">
+        </div>
+        <div id="twinkling"></div>
+        <div id="clouds"></div>
+    </div>
+    <div class="site">
+        <div class="title" style="z-index:4;">
+          <a href="/">Fedeoo博客</a>
+          <a class="extra" href="/archive.html">Archive</a>
+          <a class="extra" href="">Pages</a>
+          <a class="extra" href="/categories.html">Categories</a>
+          <a class="extra" href="/tags.html">Tags</a>
+        </div>
+            <div id="post">
+      <h1>碎片</h1>
+      <p class="meta">
+        17 October 2013 
+      </p>
+      <p>在介绍模板的时候内容部分就有一些模板标记，一不小心出现了这个{{"{{" }}，编译的时候还报错。liquid模板中跳过的方式可以使用{{"{{" }} "content"  }}包括起来。</p>
+      <br/>
+    <p>想用CSS3做个天空由黑到亮的动画效果，做成加载动画。在网上没有找到理想的动画效果。不过这个夜空的效果还不错，也非常简单。实现的方式就是使用一层动图覆盖星星就有闪烁效果。效果在：
+    <a href="http://fedeoo.github.io/page/index.html">http://fedeoo.github.io/page/index.html</a><p>
+    <br/>
+    <p>出自：
+    <a href="http://www.script-tutorials.com/night-sky-with-twinkling-stars/">http://www.script-tutorials.com/night-sky-with-twinkling-stars/</a></p>
+    </div>
+    </div>
+    <script type="text/javascript">
+    (function(){
+        console.log('寒冷的夜空，星星在颤抖....');
+    })();
+    </script>
+</body>
+</html>
