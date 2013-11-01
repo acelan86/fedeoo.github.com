@@ -12,6 +12,7 @@
 }*/
 html, body {
   height: 100%;
+  word-break: break-all;
 }
 
 body {
@@ -89,7 +90,7 @@ ul.posts {
 .site {
   font-size: 110%;
   text-align: justify;
-  width: 50em;
+  width: 60em;
   margin: 3em auto 2em auto;
   line-height: 1.5em;
 }
@@ -175,6 +176,10 @@ ul.posts {
   #post ul,
   #post ol {
     margin-left: 1.35em;
+  }
+
+  #post ol{
+    padding: 0px;
   }
 
   #post ul{
