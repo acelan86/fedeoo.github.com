@@ -46,5 +46,5 @@ gem install jekyll 就是不成功，找不到库。
 	self.content = File.read(File.join(base, name), :encoding => "utf-8")
 
 ------
-为博客index页加preview，关键字：excerpt
-为博客加评论关键字：duoshuo 
+为博客index页加preview，关键字：excerpt  
+为博客加评论，关键字：duoshuo 功能添加很简单，搜索到，copy代码就行了。

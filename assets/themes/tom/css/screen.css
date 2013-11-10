@@ -166,6 +166,10 @@ ul.posts {
   float: right;
   margin-top: -3em;
 }
+
+#post .excerpt{
+  color: #666;
+}
   /* standard */
 
   #post pre {
