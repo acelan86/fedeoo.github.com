@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "代码评审 slider.js"
+title: "代码评审-slider.js"
 description: ""
 category: 
 tags: []
+excerpt: 原代码在codereview项目中 review建议：第86行：格式问题，运算符两侧加空格，语句结尾严格使用”;” ,   如：return \“a\” + \“b\” + \“c\”;2.  188-189： 复杂操作缺乏注释，折行错误，导致代码意义不能明确看出3.  254：添加多个css时应该批量处理，而不是一个属性一个属性加，提高效率，如：dom.style.cssText += ‘;width\:100px;height\:200px’;4.  264：没用的代码请及时清除5.  304：判断是否有某个className时不能直接使用空格进行split，如果className用多个空格连接则会出问题，建议使用正则判断或者在需要判断的className两侧加上空格进行判断。如：(’  ’ + dom.className + ‘  ’).indexOf(‘  ’ + cName + ‘ ’) !== -1;
 ---
 {% include JB/setup %}
 原代码在codereview项目中

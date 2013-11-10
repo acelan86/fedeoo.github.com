@@ -4,6 +4,7 @@ title: "阅读CSS规范文档"
 description: ""
 category: 
 tags: [阅读文档记录]
+excerpt: 一些值得注意的 || 自己之前不晓得的 || 觉得重要的。### 第四章 语法和基本数据类型 
 ---
 {% include JB/setup %}
 

@@ -4,6 +4,7 @@ title: "构建chrome插件"
 description: ""
 category: 
 tags: []
+excerpt: 先看的是chrome英文文档，后来发现360有中文文档<http://open.chrome.360.cn/extension_dev/overview.html>文档说的很大多很清楚。但是也有坑啊！360的没有更新的原因吧：有些方法已经有代替方法，如：+ chrome.tabs.sendRequest -->  chrome.tabs.sendMessage + chrome.tabs.getAllInWindow(null, function(tabs){}) --> chrome.tabs.query({}, function (tabs) {})关键是这些废弃的方法也不提个醒，用起来也没错。调试的时
 ---
 {% include JB/setup %}
 先看的是chrome英文文档，后来发现360有中文文档<http://open.chrome.360.cn/extension_dev/overview.html>

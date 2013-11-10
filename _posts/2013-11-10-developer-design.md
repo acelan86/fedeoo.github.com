@@ -4,6 +4,7 @@ title: "为开发者的设计"
 description: ""
 category: 
 tags: []
+excerpt: design for developers 老外的presentation 大概整理了下：### 实用技巧1 a 排版 b 对齐 c 光影 - a.排版 字体大小最少14px 或者默认大小，有时也依赖字体； 可读长度不超过60字符；headings 1.1倍行高 段落1.5倍行高 - b.对齐 接近原则（格式塔），留空白分组；数字6，font-size 12 line-height 18 font-size 16 line-height 24 主要元素间距6个单元 正常间距4个单元 
 ---
 {% include JB/setup %}
 design for developers 老外的presentation

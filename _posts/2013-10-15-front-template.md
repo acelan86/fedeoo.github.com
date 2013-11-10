@@ -4,6 +4,8 @@ title: "前端模板"
 description: ""
 category: 
 tags: []
+excerpt: 一遍讲设计模板引擎的文章，不过本身没有讲如何设计。http://www.toobug.net/article/how_to_design_front_end_template_engine.html或许每个人的叙述方式不同，不是很习惯别人的表述方式，还是按照自己的来。很多还是摘自其它文章。引子：上面形式的代码应该都写过。smells bad! 太复杂且不利于阅读。
+
 ---
 {% include JB/setup %}
 一遍讲设计模板引擎的文章，不过本身没有讲如何设计。

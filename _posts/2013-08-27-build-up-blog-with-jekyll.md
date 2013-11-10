@@ -4,6 +4,8 @@ title: "使用jekyll构建博客"
 description: ""
 category: bulid-up
 tags: [gitblog jekyll]
+excerpt: 因为需要在github下记录一些东西，git上使用的git wiki，不是很顺手。网上有推荐wordpress或用github自己搭建blog的。以下记录了今天折腾的过程。在windows下搭建。由于刚接触github，git的操作还不够顺溜，又多费了把劲。(由于对git不熟，在使用该命令时，按照网上的git clone git@github.com:fedeoo/***.git 老是出错。)
+
 ---
 {% include JB/setup %}
 因为需要在github下记录一些东西，git上使用的git wiki，不是很顺手。网上有推荐wordpress或用github自己搭建blog的。
