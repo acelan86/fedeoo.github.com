@@ -44,3 +44,7 @@ gem install jekyll 就是不成功，找不到库。
 找到ruby目录下gems/jekyll-0.11.0/lib/jekyll/convertible.rb 31行修改为下面的内容
 
 	self.content = File.read(File.join(base, name), :encoding => "utf-8")
+
+------
+为博客index页加preview，关键字：excerpt
+为博客加评论关键字：duoshuo 
