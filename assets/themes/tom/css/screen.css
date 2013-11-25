@@ -17,27 +17,32 @@ html, body {
 
 body {
   background-color: white;
-  font: 14px 'Microsoft YaHei', helvetica, arial, clean, sans-serif;
+  font: 12px 'Microsoft YaHei', helvetica, arial, clean, sans-serif;
   *font-size: small;
   text-align: center;
   line-height: 1.5
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Comic Sans MS','Microsoft YaHei';
+  font-family: verdana, '黑体', 'Microsoft YaHei';
+  font-weight: bold;
   font-size: 100%;
   margin: 10px 0px;
 }
 
-h1{
-  font-size: 125%;
+h1 {
+    font-size: 24px;
+}
+h2 {
+    font-size: 16px;
 }
 h3, h4, h5, h6{
-  color: blue;
+    font-size: 14px;
+    color: blue;
 }
 
 h1 {
-  margin-bottom: 1em;
+    margin-bottom: 1em;
 }
 
 p {
@@ -45,14 +50,10 @@ p {
 }
 
 a {
-  color: #00a;
-}
-
-a:hover {
   color: black;
 }
 
-a:visited {
+a:hover {
   color: #a0a;
 }
 
